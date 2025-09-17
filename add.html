@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* === Create Page Styles === */
+    .create-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .create-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 28px;
+    }
+
+    .create-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .create-form input,
+    .create-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #fafafa;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    .create-form input:focus,
+    .create-form textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 6px rgba(0,123,255,0.3);
+      outline: none;
+      background: #fff;
+    }
+
+    .create-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .create-form button {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #007bff;
+      color: #fff;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .create-form button:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    .create-form .btn-secondary {
+      background: #6c757d;
+      margin-left: 10px;
+    }
+
+    .create-form .btn-secondary:hover {
+      background: #5a6268;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Reuse your site navbar -->
+  <header>
+    <div class="logo">InspireHub</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#hero" class="active">Home</a></li>
+        <li><a href="index.html#blogs">Blogs</a></li>
+        <li><a href="add.html">Create</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <!-- ✅ Create Blog Form -->
+  <div class="create-container">
+    <h2>Create New Blog</h2>
+    <form id="createForm" class="create-form">
+      <label for="title">Blog Title</label>
+      <input id="title" type="text" placeholder="Enter blog title" required>
+
+      <label for="image">Image URL</label>
+      <input id="image" type="text" placeholder="Paste an image link (optional)">
+
+      <label for="content">Blog Content</label>
+      <textarea id="content" placeholder="Write your blog content here..." required></textarea>
+
+      <div>
+        <button type="submit">Publish Blog</button>
+        <button type="reset" class="btn-secondary">Clear</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="blog-crud.js"></script>
+  <script>
+    document.getElementById('createForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const title = document.getElementById('title').value.trim();
+      const image = document.getElementById('image').value.trim();
+      const content = document.getElementById('content').value.trim();
+
+      if (!title || !content) {
+        alert("Please fill in Title and Content!");
+        return;
+      }
+
+      // Save new blog using CRUD API
+      window.inspireHub.addBlog({ title, image, content });
+
+      // Redirect back to home page
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>
+
+
+  <script src="blog-crud.js"></script>
+  <footer>
+    <p>© 2025 InspireHub | All Rights Reserved</p>
+   
+  </footer>
+</body>
+</html>

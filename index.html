@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+ <header>
+  <div class="logo">InspireHub</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html#hero" class="active">Home</a></li>
+      <li><a href="index.html#blogs">Blogs</a></li>
+      <li><a href="add.html">Create</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </nav>
+</header>
+
+
+  <!-- Hero Section -->
+ <section id="hero" style="background: url('hero.jpeg') no-repeat center center/cover;">
+  <div class="overlay">
+    <h1>Welcome to InspireHub</h1>
+    <p>Your daily dose of inspiration, productivity tips, and personal growth.</p>
+    <a href="#blogs" class="btn">Explore Blogs</a>
+  </div>
+</section>
+
+  <!-- Blog Section -->
+<!-- Blog Section -->
+<section id="blogs">
+  <h2>Latest Blogs</h2>
+  <div id="blogList" class="blog-container">
+
+     <div class="blog-container">
+        <div class="blog-card">
+          <img src="blog1.jpeg" alt="Blog 1">
+          <h3>Why Blogging Improves Your Skills</h3>
+          <p>
+            Blogging is not just about writing, it’s a way of learning. 
+            Every time you share your thoughts, you research, reflect, 
+            and present them in a structured way. This improves your 
+            communication, writing, and even technical knowledge. 
+            A blog can be your digital notebook that inspires others 
+           while helping you grow.
+         </p>
+          <a href="blog1.html" class="btn">Read More</a>
+       </div>
+           <div class="blog-card">
+              <img src="blog2.jpeg" alt="Blog 2">
+              <h3>5 Tips for Staying Productive</h3>
+              <p>
+                In today’s fast-paced world, staying productive can be challenging. 
+                Start by planning your day with small achievable goals, 
+                use digital tools like calendars and to-do lists, 
+                avoid multitasking, and take short breaks to refresh your mind. 
+                Remember, productivity is not about doing more, 
+                it’s about doing things smartly.
+              </p>
+              <a href="blog2.html" class="btn">Read More</a>
+           </div>
+           <div class="blog-card">
+             <img src="blog3.jpeg" alt="Blog 3">
+             <h3>The Importance of Self-Care</h3>
+             <p>
+               Self-care is often overlooked, yet it is essential for 
+               maintaining mental and physical health. Simple activities like 
+               reading, meditating, exercising, or even spending time 
+               with loved ones can make a huge difference. When you take care 
+               of yourself, you recharge your energy and become more capable 
+               of facing challenges in life.
+             </p>
+             <a href="blog3.html" class="btn">Read More</a>
+           </div>
+       </div>
+    </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+    </form>
+    <p id="formMessage"></p>
+  </section>
+
+  <div id="undoMessage" class="undo-message" style="display:none;"></div>
+
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 InspireHub | All Rights Reserved</p>
+   
+  </footer>
+
+  <script src="script.js"></script>
+<script src="blog-crud.js"></script>
+
+</body>
+</html>

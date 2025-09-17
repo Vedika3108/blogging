@@ -1,0 +1,329 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #222;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db; /* or a gradient for a modern look */
+  letter-spacing: 1px;
+}
+
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+#menu-toggle, #mode-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none;
+}
+
+/* Hero */
+#hero {
+  background: url("images/hero.jpeg" )no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff5e57;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #e84342;
+}
+
+/* Blog Section */
+#blogs {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-card h3 {
+  padding: 15px;
+  font-size: 1.2em;
+}
+
+.blog-card p {
+  padding: 0 15px 15px;
+}
+.blog-detail {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.blog-detail h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.blog-detail img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.blog-detail p {
+  margin: 15px 0;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+/* Related Posts */
+.related-posts {
+  background: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.related-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.related-card {
+  width: 200px;
+  text-decoration: none;
+  color: #333;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.related-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.related-card p {
+  padding: 10px;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px 20px;
+  background: #f1f1f1;
+  text-align: center;
+}
+
+#contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact input, #contact textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#formMessage {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+}
+
+#scrollTop {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  background: #ff5e57;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    width: 200px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+  }
+
+  header nav ul li {
+    margin: 15px 0;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+}
+
+/* Dark Mode */
+body.dark {
+  background: #121212;
+  color: #ddd;
+}
+
+body.dark header, 
+body.dark footer {
+  background: #111;
+}
+
+body.dark .blog-card {
+  background: #1e1e1e;
+  color: #ddd;
+}
+  
+/* Undo message popup (non-invasive) */
+.undo-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(34,34,34,0.95);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 2000;
+  font-size: 14px;
+  display: none;
+}
+.undo-message button {
+  margin-left: 12px;
+  background: #ffb74d;
+  color: #111;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Delete button: styles chosen to match your theme but scoped to .blog-card */
+.blog-card .delete-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+.blog-card .delete-btn:hover { background: #c82333; }
+
