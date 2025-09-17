@@ -86,13 +86,14 @@
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <form id="contactForm">
+    <form id="contactForm"  class="contact-form" >
       <input type="text" id="name" placeholder="Your Name" required>
       <input type="email" id="email" placeholder="Your Email" required>
       <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit" class="btn">Send</button>
     </form>
-    <p id="formMessage"></p>
+    <p id="formMessage" style="color: green; font-weight: bold; display: none;">
+      ✅ Your message has been sent successfully!</p>
   </section>
 
   <div id="undoMessage" class="undo-message" style="display:none;"></div>
@@ -106,6 +107,17 @@
 
   <script src="script.js"></script>
 <script src="blog-crud.js"></script>
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // stop normal form submit
+    status.style.display = "block"; // show message
+    form.reset(); // clear form
+  });
+</script>
+
 
 </body>
 </html>
